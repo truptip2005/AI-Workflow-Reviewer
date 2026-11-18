@@ -1,0 +1,234 @@
+{
+  "final_system": {
+    "correct": 14,
+    "total": 14,
+    "false_passes": 0,
+    "false_blocks": 0,
+    "details": [
+      {
+        "bundle_id": "DEV_01_valid_baseline",
+        "split": "DEV",
+        "expected": "PASS",
+        "actual": "PASS",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 19.154,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "DEV_02_valid_approved_change",
+        "split": "DEV",
+        "expected": "PASS",
+        "actual": "PASS",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 5.948,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "DEV_03_valid_unusual_formulation",
+        "split": "DEV",
+        "expected": "PASS",
+        "actual": "PASS",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 5.729,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "DEV_04_defect_unapproved_prose",
+        "split": "DEV",
+        "expected": "INCOMPLETE",
+        "actual": "INCOMPLETE",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 3.891,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "DEV_05_defect_approval_conflict",
+        "split": "DEV",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 1,
+        "runtime_ms": 4.416,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "DEV_06_defect_omitted_req",
+        "split": "DEV",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 2,
+        "runtime_ms": 8.659,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": {
+          "ticket_input": {
+            "category": "present_value",
+            "urgent": true,
+            "wait_time": 1800
+          },
+          "expected_route": "priority_queue",
+          "actual_route": "escalation"
+        }
+      },
+      {
+        "bundle_id": "DEV_07_defect_boundary_strict",
+        "split": "DEV",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 1,
+        "runtime_ms": 8.739,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": {
+          "ticket_input": {
+            "category": "present_value",
+            "urgent": null,
+            "wait_time": 1800
+          },
+          "expected_route": "escalation",
+          "actual_route": "normal_queue"
+        }
+      },
+      {
+        "bundle_id": "DEV_08_defect_precedence_swap",
+        "split": "DEV",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 1,
+        "runtime_ms": 8.509,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": {
+          "ticket_input": {
+            "category": null,
+            "urgent": true,
+            "wait_time": null
+          },
+          "expected_route": "manual_review",
+          "actual_route": "priority_queue"
+        }
+      },
+      {
+        "bundle_id": "DEV_09_defect_code_disagreement",
+        "split": "DEV",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 2,
+        "runtime_ms": 9.552,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": {
+          "ticket_input": {
+            "category": "present_value",
+            "urgent": false,
+            "wait_time": 1800
+          },
+          "spec_match": true,
+          "code_match": false
+        }
+      },
+      {
+        "bundle_id": "DEV_10_incomplete_unsupported_code",
+        "split": "DEV",
+        "expected": "INCOMPLETE",
+        "actual": "INCOMPLETE",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 3.321,
+        "llm_calls": 3,
+        "llm_retries": 2,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "HOLDOUT_01_paired_invariant_pass",
+        "split": "HOLDOUT",
+        "expected": "PASS",
+        "actual": "PASS",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 8.033,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": null
+      },
+      {
+        "bundle_id": "HOLDOUT_02_paired_semantic_defect",
+        "split": "HOLDOUT",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 1,
+        "runtime_ms": 11.152,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": {
+          "ticket_input": {
+            "region": "present_value",
+            "severity": 9,
+            "vip": null,
+            "wait_time": null
+          },
+          "expected_route": "fast_track",
+          "actual_route": "standard"
+        }
+      },
+      {
+        "bundle_id": "HOLDOUT_03_wrong_branch_and_llm_hallucination",
+        "split": "HOLDOUT",
+        "expected": "CHANGES_REQUIRED",
+        "actual": "CHANGES_REQUIRED",
+        "match": true,
+        "findings_count": 2,
+        "runtime_ms": 8.286,
+        "llm_calls": 1,
+        "llm_retries": 0,
+        "sample_counterexample": {
+          "ticket_input": {
+            "category": "present_value",
+            "urgent": true,
+            "wait_time": null
+          },
+          "expected_route": "priority_queue",
+          "actual_route": "escalation"
+        }
+      },
+      {
+        "bundle_id": "HOLDOUT_04_model_json_failure",
+        "split": "HOLDOUT",
+        "expected": "INCOMPLETE",
+        "actual": "INCOMPLETE",
+        "match": true,
+        "findings_count": 0,
+        "runtime_ms": 5.652,
+        "llm_calls": 3,
+        "llm_retries": 2,
+        "sample_counterexample": null
+      }
+    ]
+  },
+  "ablated_no_smt": {
+    "correct": 7,
+    "total": 14,
+    "false_passes": 0,
+    "false_blocks": 0,
+    "details": []
+  }
+}
